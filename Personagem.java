@@ -1,4 +1,10 @@
 public class Personagem {
+    //Crio uma lista de classes válidas para o personagem, 
+    // para que não seja possível criar um personagem uma função desconhecida.
+    private enum ClasseValida {
+        Mago, Guerreiro, Arqueiro
+    }
+
     String nome;
     String classe;
     int nivel;
@@ -7,7 +13,8 @@ public class Personagem {
 
     public Personagem(String nome, String classe, int nivel, int pontosDeVida, double poderBase) {
         this.nome = nome;
-        this.classe = classe;
+        this.classe = ClasseValida.valueOf(classe).name();//Caso seja adicionado um personagem
+        //  com uma classe inválida, o programa irá lançar uma exceção.
         this.nivel = nivel;
         this.pontosDeVida = pontosDeVida;
         this.poderBase = poderBase;
