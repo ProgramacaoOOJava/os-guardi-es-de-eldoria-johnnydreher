@@ -1,10 +1,17 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        Personagem heroi1 = new Personagem("Arthus", "Guerreiro", 1, 100, 10.5);
-        Personagem heroi2 = new Personagem("Aremis", "Arqueiro", 5, 80, 12.5);
+        ArrayList<Personagem> herois = new ArrayList<>();
+        herois.add(new Mago("Gandalf", 10, 100, 50.0));
+        herois.add(new Guerreiro("Conan", 8, 120, 40.0));
+        herois.add(new Arqueiro("Legolas", 9, 90, 45.0));
 
-        heroi1.exibirStatus();
-        heroi2.exibirStatus();
+
+        for (Personagem heroi : herois) {
+            heroi.exibirStatus();
+            heroi.usarHabilidadeEspecial();
+        }
 
     }
 }

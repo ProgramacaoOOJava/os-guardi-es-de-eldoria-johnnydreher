@@ -1,4 +1,4 @@
-public class Personagem {
+public abstract class Personagem {
     //Crio uma lista de classes válidas para o personagem, 
     // para que não seja possível criar um personagem uma função desconhecida.
     private enum ClasseValida {
@@ -30,5 +30,6 @@ public class Personagem {
         System.out.println("Pode Base: "+this.poderBase); 
 
     }
+    public abstract void usarHabilidadeEspecial();
 }
 
